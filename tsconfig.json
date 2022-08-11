@@ -1,0 +1,18 @@
+{
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "include": ["src/**/*"],
+    "compilerOptions": {
+        "moduleResolution": "node16",
+        "rootDir": "src",
+        "outDir": "dist/cjs",
+        "isolatedModules": true,
+        "composite": true,
+        "declaration": true,
+        "sourceMap": true,
+        "types": [],
+    },
+    "references": [
+        {"path": "./browser/tsconfig.json"},
+        {"path": "./node/tsconfig.json"}
+    ]
+}

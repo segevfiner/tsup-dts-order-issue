@@ -1,0 +1,46 @@
+{
+  "name": "tsup-dts-order-issue",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MWE of a tsup issue with dts build order",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "dist/index.mjs",
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.ts"
+  },
+  "keywords": ["mwe"],
+  "author": "Segev Finer <segev208@gmail.com>",
+  "license": "Unlicense",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./browser": {
+      "default": "./dist/browser/index.js"
+    },
+    "./node": {
+      "require": "./dist/node/index.js"
+    }
+  },
+  "packageManager": "pnpm@7.9.0",
+  "engines": {
+    "node": "^16",
+    "pnpm": ">=7"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "16",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.5.1",
+    "tsup": "^6.2.1",
+    "typescript": "~4.7.4"
+  }
+}
